@@ -1,1 +1,3 @@
 Roulette
+
+Jeg får “Segmentation fault: 11” når jeg kjører med 1000000 trekninger.
