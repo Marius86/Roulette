@@ -8,7 +8,7 @@
 
 #include "Roulette.h"               //trenger jeg denne linjen??
 #include <iostream>
-#include <cstdlib>                  //rand
+#include <cstdlib>                  //rand //atoi
 #include <vector>
 
 using namespace std;                // for at den skal finne cout
