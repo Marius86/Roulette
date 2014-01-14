@@ -6,18 +6,26 @@
 //
 //
 
-#include "Roulette.h"       //trenger jeg denne linjen??
+#include "Roulette.h"               //trenger jeg denne linjen??
 #include <iostream>
-#include <cstdlib>          //rand
+#include <cstdlib>                  //rand
 #include <vector>
 
-using namespace std;        // for at den skal finne cout
+using namespace std;                // for at den skal finne cout
 
-int main()
+int main(int argc, char* argv[])
 {
+    if (argc != 2)                  // kontrollerer at det er sendt med ett parameter
+    {
+        cout << "Send med ett parameter!" << endl;
+        return 0;
+    }
+    
     cout << endl << "Roulette\n" << endl;
 
-    int n = 100000;        //antall trekninger
+    cout << "Parameter sendt med fra terminal: " << argv[1] << endl;
+    
+    int n = atoi(argv[1]);          //antall trekninger. atoi() konverterer til int
     int teller = 0;
     int sekvensteller = 0;
     int temp = -1;
@@ -26,7 +34,7 @@ int main()
     int farge [2] = {};
     vector<int> sekvensVector(10, 0); // {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
     
-    srand (time(NULL));     //initialize random seed
+    srand (time(NULL));             //initialize random seed
     temp = rand() % 2;
     
     farge[temp]++;
@@ -63,7 +71,7 @@ int main()
         }
     }
     
-    cout << "Sekvenser" << endl;
+    cout << "Sekvenser:" << endl;
     for(int i = 0; i < n; i++)
     {
         if(sekvensVector[i] != 0)
